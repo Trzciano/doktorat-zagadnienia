@@ -1,9 +1,9 @@
 % !TeX program = xelatex
-% Kompilacja:  python build.py      (uzywa silnika Tectonic -> main.pdf)
-\documentclass[11pt,a4paper]{report}
+% Kompilacja:  python build.py      (silnik Tectonic -> main.pdf)
+\documentclass[12pt,a4paper]{report}
 
 % ---------------------------------------------------------------------
-%  Silnik i czcionki (dziala pod Tectonic/XeTeX oraz pod pdfLaTeX)
+%  Silnik i czcionki: Times New Roman 12 pt (XeTeX: TeX Gyre Termes)
 % ---------------------------------------------------------------------
 \usepackage{iftex}
 \usepackage{amsmath}
@@ -12,121 +12,75 @@
 \ifPDFTeX
   \usepackage[utf8]{inputenc}
   \usepackage[T1]{fontenc}
-  \usepackage{lmodern}
-  \usepackage{amssymb}
+  \usepackage{mathptmx}          % Times (tekst + matematyka)
 \else
-  % XeTeX/LuaTeX (Tectonic): natywny Unicode + eleganckie czcionki OTF
   \usepackage{fontspec}
   \usepackage{unicode-math}
-  \setmainfont{texgyrepagella-regular.otf}[
-    BoldFont       = texgyrepagella-bold.otf,
-    ItalicFont     = texgyrepagella-italic.otf,
-    BoldItalicFont = texgyrepagella-bolditalic.otf ]
-  \setsansfont{texgyreheros-regular.otf}[
-    BoldFont   = texgyreheros-bold.otf,
-    ItalicFont = texgyreheros-italic.otf,
-    Scale      = 0.92 ]
-  \setmathfont{texgyrepagella-math.otf}
+  \setmainfont{texgyretermes-regular.otf}[
+    BoldFont       = texgyretermes-bold.otf,
+    ItalicFont     = texgyretermes-italic.otf,
+    BoldItalicFont = texgyretermes-bolditalic.otf ]
+  \setmathfont{texgyretermes-math.otf}
 \fi
 
 \usepackage[polish]{babel}
-\usepackage[a4paper,margin=2.5cm,headheight=15pt]{geometry}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing                    % interlinia 1,5
+\setlength{\parindent}{1cm}        % wciecie akapitowe 1 cm
+\setlength{\parskip}{0pt}
 \usepackage{microtype}
-\usepackage{parskip}
-\linespread{1.05}
 
 % ---------------------------------------------------------------------
-%  Kolory
+%  Grafika, tabele, listy (czarno-biale)
 % ---------------------------------------------------------------------
-\usepackage{xcolor}
-\definecolor{accent}{HTML}{1F3A5F}   % granatowy
-\definecolor{accentB}{HTML}{2E7D32}  % zielony
-\definecolor{accentBg}{HTML}{EEF3F8}
-\definecolor{warn}{HTML}{B26A00}
-\definecolor{warnBg}{HTML}{FBF0E1}
-\definecolor{softgray}{HTML}{F4F5F7}
-
-% ---------------------------------------------------------------------
-%  Grafika, tabele, listy
-% ---------------------------------------------------------------------
+\usepackage{xcolor}                % tylko czern i odcienie szarosci
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{makecell}
 \usepackage{enumitem}
-\setlist{itemsep=2pt, topsep=3pt, parsep=0pt}
-\usepackage{caption}
-\captionsetup{font=small, labelfont={sf,bf,color=accent}, textfont=sf}
-
+\setlist{itemsep=1pt, topsep=3pt, parsep=0pt}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,calc,positioning,intersections,%
-  decorations.pathreplacing,patterns,backgrounds,fit}
+\usetikzlibrary{arrows.meta,calc,positioning,patterns}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usepgfplotslibrary{groupplots,fillbetween}
+\usepgfplotslibrary{groupplots}
 \tikzset{>=Stealth}
 
 % ---------------------------------------------------------------------
-%  Kolorowe ramki (definicje / intuicje / wzory / uwagi)
+%  Podpisy rysunkow/tabel: "Rys. N." pod, "Tab. N." nad, 10 pt
 % ---------------------------------------------------------------------
-\usepackage[most]{tcolorbox}
-\newtcolorbox{definicja}[1][]{enhanced, breakable, colback=accentBg,
-  colframe=accent, coltitle=white, fonttitle=\sffamily\bfseries,
-  title=Definicja, boxrule=0.6pt, arc=2pt, left=8pt, right=8pt,
-  top=5pt, bottom=5pt, #1}
-\newtcolorbox{intuicja}[1][]{enhanced, breakable, colback=accentB!6,
-  colframe=accentB, coltitle=white, fonttitle=\sffamily\bfseries,
-  title=Intuicja, boxrule=0.6pt, arc=2pt, left=8pt, right=8pt,
-  top=5pt, bottom=5pt, #1}
-\newtcolorbox{kluczowe}[1][]{enhanced, breakable, colback=accent!7,
-  colframe=accent!55!black, coltitle=white, fonttitle=\sffamily\bfseries,
-  title=Kluczowe, boxrule=0.6pt, arc=2pt, left=8pt, right=8pt,
-  top=5pt, bottom=5pt, #1}
-\newtcolorbox{uwaga}[1][]{enhanced, breakable, colback=warnBg,
-  colframe=warn, coltitle=white, fonttitle=\sffamily\bfseries,
-  title=Uwaga, boxrule=0.6pt, arc=2pt, left=8pt, right=8pt,
-  top=5pt, bottom=5pt, #1}
+\usepackage{caption}
+\captionsetup{font=footnotesize, labelsep=period,
+  justification=raggedright, singlelinecheck=false}
+\captionsetup[figure]{name=Rys.}
+\captionsetup[table]{name=Tab.}
+\newcommand{\zrodlo}[1][opracowanie własne]{\par\vspace{1pt}%
+  {\footnotesize\raggedright Źródło: #1\par}}
+
+% Numeracja ciagla w calej pracy (rysunki, tabele, rownania)
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
 
 % ---------------------------------------------------------------------
-%  Stylizacja naglowkow
+%  Naglowki: czarne, pogrubione, numery z kropka
 % ---------------------------------------------------------------------
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\sffamily\bfseries\color{accent}}
-  {\color{accent!65}\large\MakeUppercase{\chaptertitlename}\ \thechapter}
-  {4pt}{\Huge}
-\titlespacing*{\chapter}{0pt}{-6pt}{16pt}
-\titleformat{\section}
-  {\normalfont\sffamily\Large\bfseries\color{accent}}
-  {\thesection}{0.6em}{}
-  [\vspace{-4pt}{\color{accent!25}\titlerule[1pt]}]
-\titleformat{\subsection}
-  {\normalfont\sffamily\large\bfseries\color{accent!88!black}}
-  {\thesubsection}{0.6em}{}
+\titleformat{\chapter}[hang]{\normalfont\LARGE\bfseries}{\thechapter.}{0.6em}{}
+\titlespacing*{\chapter}{0pt}{-18pt}{16pt}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection.}{0.5em}{}
 
-% ---------------------------------------------------------------------
-%  Naglowki i stopki stron
-% ---------------------------------------------------------------------
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small\sffamily\color{accent!80}\nouppercase{\leftmark}}
-\fancyhead[R]{\small\sffamily\color{accent!80}\thepage}
-\renewcommand{\headrulewidth}{0.6pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancypagestyle{plain}{\fancyhf{}%
-  \fancyfoot[C]{\small\sffamily\color{accent!80}\thepage}%
-  \renewcommand{\headrulewidth}{0pt}}
+\pagestyle{plain}                  % numer strony na dole, na srodku
 
-% ---------------------------------------------------------------------
-%  Odsylacze
-% ---------------------------------------------------------------------
-\usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accentB,
-  citecolor=accentB, bookmarksnumbered=true,
-  pdftitle={Zagadnienia egzaminacyjne -- Ekonomia i Finanse}}
+\usepackage[hidelinks]{hyperref}   % odsylacze bez kolorow
+\hypersetup{pdftitle={Zagadnienia egzaminacyjne -- Ekonomia i Finanse}}
 
 \setcounter{tocdepth}{1}
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \raggedbottom
 
 % =====================================================================
@@ -135,23 +89,21 @@
 
 \begin{titlepage}
   \centering
-  \vspace*{3.2cm}
-  {\sffamily\bfseries\color{accent}\Huge Zagadnienia egzaminacyjne\par}
-  \vspace{10pt}
-  {\color{accent!25}\rule{0.5\linewidth}{1.2pt}}\par
-  \vspace{14pt}
-  {\sffamily\LARGE Egzamin doktorski\par}
-  \vspace{4pt}
-  {\sffamily\Large Ekonomia i~Finanse\par}
-  \vfill
-  {\sffamily\large Opracowanie i~notatki\par}
+  \vspace*{4cm}
+  {\LARGE\bfseries Zagadnienia egzaminacyjne\par}
   \vspace{6pt}
-  {\small \today}
+  {\Large Egzamin doktorski --- Ekonomia i~Finanse\par}
+  \vspace{2cm}
+  {\large Opracowanie\par}
+  \vfill
+  {\normalsize \today\par}
 \end{titlepage}
 
 \pagenumbering{roman}
+{\singlespacing
 \tableofcontents
-\cleardoublepage
+}
+\clearpage
 \pagenumbering{arabic}
 
 % =====================================================================
@@ -160,65 +112,65 @@
 
 \input{tresc/eko-01.tex}
 
-\section{Polityka regulacji cen; wpływ opodatkowania na sytuację rynkową; dobra publiczne i dobra prywatne}
+\section[Regulacja cen, opodatkowanie, dobra publiczne i prywatne]{Polityka regulacji cen; wpływ opodatkowania na sytuację rynkową; dobra publiczne i dobra prywatne}
 \textit{Treść w przygotowaniu.}
 
-\section{Niedoskonałości rynku; asymetria informacyjna -- konsekwencje i metody redukcji}
+\section[Niedoskonałości rynku, asymetria informacji]{Niedoskonałości rynku; asymetria informacyjna --- konsekwencje i metody redukcji}
 \textit{Treść w przygotowaniu.}
 
-\section{Formy konkurencji rynkowej -- konkurencja doskonała i konkurencja monopolistyczna, cechy rynku oligopolistycznego}
+\section[Formy konkurencji: doskonała, monopolistyczna, oligopol]{Formy konkurencji rynkowej --- konkurencja doskonała i konkurencja monopolistyczna, cechy rynku oligopolistycznego}
 \textit{Treść w przygotowaniu.}
 
-\section{Determinanty i konsekwencje nierówności dochodowych, krzywa Lorenza i współczynnik Giniego}
+\section[Nierówności dochodowe, krzywa Lorenza, współczynnik Giniego]{Determinanty i konsekwencje nierówności dochodowych, krzywa Lorenza i współczynnik Giniego}
 \textit{Treść w przygotowaniu.}
 
-\section{Definicja i metody pomiaru PKB; PKB a PNB; ograniczenia PKB jako miernika dobrobytu; inflacja -- pomiar i przyczyny występowania; inflacja a deflator PKB; determinanty wzrostu gospodarczego w długim okresie; konwergencja; modele wzrostu gospodarczego}
+\section[PKB, PNB, inflacja, wzrost gospodarczy, konwergencja]{Definicja i metody pomiaru PKB; PKB a PNB; ograniczenia PKB jako miernika dobrobytu; inflacja --- pomiar i przyczyny występowania; inflacja a deflator PKB; determinanty wzrostu gospodarczego w długim okresie; konwergencja; modele wzrostu gospodarczego}
 \textit{Treść w przygotowaniu.}
 
-\section{Bezrobocie -- definicja, rodzaje; pojęcie, rodzaje i funkcje pieniądza; mechanizm kreacji pieniądza}
+\section[Bezrobocie; pieniądz i jego kreacja]{Bezrobocie --- definicja, rodzaje; pojęcie, rodzaje i funkcje pieniądza; mechanizm kreacji pieniądza}
 \textit{Treść w przygotowaniu.}
 
-\section{Międzynarodowe przepływy dóbr i kapitału oraz ich determinanty; zalety i wady teorii parytetu siły nabywczej i parytetu stóp procentowych; bilans handlowy z zagranicą; efekt mnożnikowy i efekt wypychania w keynesowskim modelu gospodarki; globalne łańcuchy wartości}
+\section[Handel i przepływy kapitału, parytety, model keynesowski]{Międzynarodowe przepływy dóbr i kapitału oraz ich determinanty; zalety i wady teorii parytetu siły nabywczej i parytetu stóp procentowych; bilans handlowy z zagranicą; efekt mnożnikowy i efekt wypychania w keynesowskim modelu gospodarki; globalne łańcuchy wartości}
 \textit{Treść w przygotowaniu.}
 
-\section{Przyczyny, przebieg i skutki kryzysów gospodarczych; krzywa zagregowanego popytu oraz długo- i krótkookresowa krzywa zagregowanej podaży; krótko- i długookresowa krzywa Phillipsa; formy stabilizacyjnej polityki państwa}
+\section[Kryzysy, AD--AS, krzywa Phillipsa, polityka stabilizacyjna]{Przyczyny, przebieg i skutki kryzysów gospodarczych; krzywa zagregowanego popytu oraz długo- i krótkookresowa krzywa zagregowanej podaży; krótko- i długookresowa krzywa Phillipsa; formy stabilizacyjnej polityki państwa}
 \textit{Treść w przygotowaniu.}
 
-\section{Modele przepływów międzygałęziowych; mnożniki input-output; globalne modele IO -- metoda konstrukcji, zalety, ograniczenia, zastosowania}
+\section[Modele przepływów międzygałęziowych (input--output)]{Modele przepływów międzygałęziowych; mnożniki input-output; globalne modele IO --- metoda konstrukcji, zalety, ograniczenia, zastosowania}
 \textit{Treść w przygotowaniu.}
 
 % =====================================================================
 \chapter{Finanse}
 % =====================================================================
 
-\section{Rozwój światowych finansów i wycena aktywów w świetle historycznie postrzeganego ryzyka i niepewności; model równowagi ogólnej (Arrow (1951), Debreu (1951), Arrow, Debreu (1954))}
+\section[Rozwój finansów, wycena aktywów, model równowagi ogólnej]{Rozwój światowych finansów i wycena aktywów w świetle historycznie postrzeganego ryzyka i niepewności; model równowagi ogólnej (Arrow (1951), Debreu (1951), Arrow, Debreu (1954))}
 \textit{Treść w przygotowaniu.}
 
-\section{Model Markowitza (1952) jako podwaliny teorii CAPM (1960--1962) i ICAPM Mertona (1973) -- krytyka, a warunki zgodności wyceny CAPM, ICAPM}
+\section[Model Markowitza, CAPM, ICAPM]{Model Markowitza (1952) jako podwaliny teorii CAPM (1960--1962) i ICAPM Mertona (1973) --- krytyka, a warunki zgodności wyceny CAPM, ICAPM}
 \textit{Treść w przygotowaniu.}
 
-\section{ICAPM w świetle APT -- różnice i podobieństwa; alternatywne modele wyceny}
+\section[ICAPM a APT; alternatywne modele wyceny]{ICAPM w świetle APT --- różnice i podobieństwa; alternatywne modele wyceny}
 \textit{Treść w przygotowaniu.}
 
-\section{Szacowanie ryzyka inwestycji w walory notowane na rynku giełdowym}
+\section[Szacowanie ryzyka inwestycji giełdowych]{Szacowanie ryzyka inwestycji w walory notowane na rynku giełdowym}
 \textit{Treść w przygotowaniu.}
 
-\section{Fundusze inwestycyjne -- ryzyko inwestycji w wybrane rodzaje funduszy}
+\section[Fundusze inwestycyjne i ich ryzyko]{Fundusze inwestycyjne --- ryzyko inwestycji w wybrane rodzaje funduszy}
 \textit{Treść w przygotowaniu.}
 
-\section{Możliwości zabezpieczenia działalności firmy w warunkach zmieniających się przyszłych stanów ekonomii}
+\section[Zabezpieczanie działalności firmy przed niepewnością]{Możliwości zabezpieczenia działalności firmy w warunkach zmieniających się przyszłych stanów ekonomii}
 \textit{Treść w przygotowaniu.}
 
-\section{Ocena wyników sprawozdań finansowych spółek publicznych w świetle inwestora giełdowego}
+\section[Ocena sprawozdań finansowych spółek publicznych]{Ocena wyników sprawozdań finansowych spółek publicznych w świetle inwestora giełdowego}
 \textit{Treść w przygotowaniu.}
 
-\section{Wycena kapitałowa nieruchomości, przedsiębiorstwa -- metody i warunki dyskretyzacji}
+\section[Wycena nieruchomości i przedsiębiorstwa]{Wycena kapitałowa nieruchomości, przedsiębiorstwa --- metody i warunki dyskretyzacji}
 \textit{Treść w przygotowaniu.}
 
-\section{Rynkowa wartość obligacji, stopy zwrotu z inwestycji w obligacje w zależności od zmian rynkowych stóp procentowych}
+\section[Wartość obligacji a stopy procentowe]{Rynkowa wartość obligacji, stopy zwrotu z inwestycji w obligacje w zależności od zmian rynkowych stóp procentowych}
 \textit{Treść w przygotowaniu.}
 
-\section{Zabezpieczenia wartości portfela obligacji -- duration obligacji, ryzyko okresu posiadania, ryzyko reinwestycji}
+\section[Zabezpieczanie portfela obligacji: duration, ryzyka]{Zabezpieczenia wartości portfela obligacji --- duration obligacji, ryzyko okresu posiadania, ryzyko reinwestycji}
 \textit{Treść w przygotowaniu.}
 
 \end{document}

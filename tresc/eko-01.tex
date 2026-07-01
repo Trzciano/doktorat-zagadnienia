@@ -1,336 +1,222 @@
 % =====================================================================
-%  ZAGADNIENIE 1 (Ekonomia)
-%  Elastyczność; optimum techniczne/ekonomiczne; użyteczność;
-%  maksymalizacja zysku i podaż firmy w konkurencji doskonałej.
+%  ZAGADNIENIE 1 (Ekonomia) -- styl pracy dyplomowej, czarno-bialy
 % =====================================================================
-\section{Elastyczność popytu i podaży; optimum techniczne i ekonomiczne; funkcja użyteczności; maksymalizacja zysku i krzywa podaży przedsiębiorstwa na rynku doskonale konkurencyjnym w krótkim i długim okresie}
+\section[Elastyczność, optimum producenta, użyteczność, konkurencja doskonała]{Elastyczność popytu i podaży; optimum techniczne i ekonomiczne; funkcja użyteczności; maksymalizacja zysku i krzywa podaży przedsiębiorstwa na rynku doskonale konkurencyjnym w krótkim i długim okresie}
 
-\begin{intuicja}[title={Mapa zagadnienia}]
-Cztery cegiełki mikroekonomii, które razem opisują \emph{jak reaguje rynek} i \emph{jak decydują jego uczestnicy}:
-\begin{enumerate}[leftmargin=1.4em]
-  \item \textbf{Elastyczność} — o ile procent zmienia się ilość, gdy cena (lub dochód) zmieni się o 1\%.
-  \item \textbf{Optimum producenta} — \emph{techniczne} (najwydajniejsze technologicznie) vs \emph{ekonomiczne} (najbardziej zyskowne).
-  \item \textbf{Funkcja użyteczności} — jak konsument wybiera koszyk dóbr przy ograniczonym budżecie.
-  \item \textbf{Konkurencja doskonała} — skąd bierze się krzywa podaży firmy oraz co ją różni w krótkim i~długim okresie.
-\end{enumerate}
-\end{intuicja}
+Zagadnienie obejmuje cztery podstawowe pojęcia mikroekonomii, opisujące reakcje rynku oraz decyzje jego uczestników: elastyczność popytu i podaży, optimum producenta, funkcję użyteczności konsumenta oraz równowagę przedsiębiorstwa na rynku doskonale konkurencyjnym. Poszczególne pojęcia omówiono kolejno w dalszej części rozdziału.
 
 % ---------------------------------------------------------------------
 \subsection{Elastyczność popytu i podaży}
 % ---------------------------------------------------------------------
 
-\textbf{Elastyczność} to miara wrażliwości jednej wielkości na zmianę drugiej, wyrażona jako iloraz \emph{zmian procentowych}. Dzięki temu jest \emph{bezwymiarowa} (niezależna od jednostek: sztuk, kg, złotych), więc porównujemy nią dowolne dobra.
+Elastyczność jest miarą wrażliwości jednej wielkości na zmianę drugiej, wyrażoną jako stosunek zmian procentowych. Dzięki temu pozostaje wielkością bezwymiarową, niezależną od przyjętych jednostek. Cenowa elastyczność popytu określa, o ile procent zmieni się wielkość popytu, gdy cena wzrośnie o jeden procent, i dana jest wzorem:
+\begin{equation}
+E_D=\frac{\text{procentowa zmiana ilości}}{\text{procentowa zmiana ceny}}=\frac{dQ}{dP}\cdot\frac{P}{Q},
+\end{equation}
+gdzie $Q$ oznacza wielkość popytu, a $P$ --- cenę. Ponieważ popyt maleje wraz ze wzrostem ceny, wartość $E_D$ jest ujemna; w analizie posługujemy się zwykle jej wartością bezwzględną. Przykładowo, gdy wzrostowi ceny o $10\%$ towarzyszy spadek zakupów o $5\%$, elastyczność wynosi $-0{,}5$.
 
-\begin{definicja}[title={Cenowa elastyczność popytu $E_D$}]
-\[
-E_D \;=\; \frac{\%\,\Delta Q_D}{\%\,\Delta P}
-      \;=\; \frac{dQ}{dP}\cdot\frac{P}{Q}
-      \;=\; \frac{d\ln Q}{d\ln P}.
-\]
-Ponieważ popyt maleje z ceną ($dQ/dP<0$), zwykle $E_D<0$; w praktyce mówimy o wartości bezwzględnej $|E_D|$.
-\end{definicja}
+Wartość bezwzględna elastyczności dzieli dobra na dwie grupy:
+\begin{itemize}
+  \item gdy przekracza jedność, popyt jest elastyczny --- nabywcy reagują silnie i łatwo rezygnują z zakupu (np. dobra luksusowe lub marki mające bliskie zamienniki),
+  \item gdy jest mniejsza od jedności, popyt jest nieelastyczny --- wielkość zakupów zmienia się nieznacznie (np. leki, energia elektryczna, pieczywo).
+\end{itemize}
 
-\begin{intuicja}
-Dla informatyka: elastyczność to \emph{pochodna logarytmiczna} $d\ln Q/d\ln P$ — nachylenie krzywej w skali log–log. Jest lokalna (inna w każdym punkcie) i unormowana, więc nie zależy od tego, czy mierzysz w sztukach, czy w tysiącach sztuk.
-\end{intuicja}
+Na poziom elastyczności wpływają dostępność substytutów, udział wydatku w budżecie, charakter dobra oraz czas dostosowania --- im jest on dłuższy, tym elastyczność większa. Elastyczność wskazuje również, czy podniesienie ceny zwiększa przychód: dla dobra nieelastycznego (np. paliwa) wzrost ceny podnosi przychód, ponieważ sprzedaż spada nieznacznie, natomiast dla dobra elastycznego przychód maleje, gdyż nabywcy przechodzą do konkurencji.
 
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Zakres} & \textbf{Nazwa} & \textbf{Interpretacja} \\
-\midrule
-$|E_D| = 0$        & doskonale nieelastyczny & ilość w ogóle nie reaguje (pion) \\
-$0<|E_D|<1$        & nieelastyczny           & ilość reaguje słabo \\
-$|E_D| = 1$        & jednostkowy             & zmiana proporcjonalna \\
-$|E_D| > 1$        & elastyczny              & ilość reaguje silnie \\
-$|E_D| \to \infty$ & doskonale elastyczny    & ilość dowolna przy danej cenie (poziom) \\
-\bottomrule
-\end{tabular}
-\caption{Klasyfikacja cenowej elastyczności popytu.}
-\end{table}
-
-\paragraph{Elastyczność wzdłuż liniowej krzywej popytu.} Wbrew intuicji, prosta krzywa popytu ma \emph{różną} elastyczność w każdym punkcie: od $\infty$ u góry do $0$ przy osi ilości, a dokładnie w środku $|E_D|=1$ (rys.~\ref{fig:elast}).
+Zjawisko to ilustruje rys.~\ref{fig:elast}. Wzdłuż jednej, liniowej krzywej popytu elastyczność jest różna w każdym punkcie: wysoka w górnej części (wysokie ceny, łatwa rezygnacja) i niska w części dolnej.
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=0.95]
+\begin{tikzpicture}[scale=0.9]
   \draw[->] (0,0) -- (7,0) node[right]{$Q$};
   \draw[->] (0,0) -- (0,6.4) node[above]{$P$};
-  \draw[very thick, accent] (0,6) -- (6,0);
-  \node[accent] at (5.4,0.95) {$D$};
-  % midpoint
-  \fill[accent] (3,3) circle (2pt);
-  \draw[dashed, gray] (3,0) node[below]{$\tfrac12 Q_{\max}$} -- (3,3) -- (0,3);
-  \node[right] at (3,3) {\small $|E_D|=1$};
-  % regions (z odnosnikami, poza linia popytu)
-  \node[accentB, align=center, font=\small] (elx) at (4.75,5.0) {$|E_D|>1$\\ elastyczny};
-  \draw[accentB, ->, thin] (elx) -- (1.35,4.65);
-  \node[warn, align=center, font=\small] (inelx) at (1.55,1.15) {$|E_D|<1$\\ nieelastyczny};
-  \draw[warn, ->, thin] (inelx) -- (4.5,1.5);
-  \node[left] at (0,6) {\small $P_{\max}$};
-  \node[below] at (6,0) {\small $Q_{\max}$};
+  \draw[very thick] (0,6) -- (6,0);
+  \node at (5.5,0.95) {popyt};
+  \fill (3,3) circle (2pt);
+  \draw[dashed] (3,0) -- (3,3) -- (0,3);
+  \node[align=center, font=\small] (elx) at (4.8,5.05) {popyt elastyczny\\ (silna reakcja)};
+  \draw[->, thin] (elx) -- (1.35,4.65);
+  \node[align=center, font=\small] (inelx) at (1.85,1.1) {popyt nieelastyczny\\ (słaba reakcja)};
+  \draw[->, thin] (inelx) -- (4.5,1.5);
 \end{tikzpicture}
-\caption{Elastyczność zmienia się wzdłuż liniowej krzywej popytu.}
+\caption{Zmiana elastyczności wzdłuż liniowej krzywej popytu}
 \label{fig:elast}
+\zrodlo
 \end{figure}
 
-\paragraph{Elastyczność a utarg (przychód).} Przy utargu całkowitym $TR=P\cdot Q$ zachodzi kluczowa zależność z utargiem krańcowym $MR$:
-\[
-MR=\frac{dTR}{dQ}=P\!\left(1+\frac{1}{E_D}\right).
-\]
-Stąd praktyczna reguła cenowa:
-\begin{itemize}
-  \item popyt \emph{elastyczny} ($|E_D|>1$): obniżka ceny \emph{zwiększa} utarg ($MR>0$);
-  \item popyt \emph{nieelastyczny} ($|E_D|<1$): podwyżka ceny \emph{zwiększa} utarg;
-  \item $|E_D|=1$: utarg jest \emph{maksymalny} ($MR=0$).
-\end{itemize}
-
-\begin{definicja}[title={Inne elastyczności}]
-\[
-\underbrace{E_I=\frac{dQ}{dI}\frac{I}{Q}}_{\text{dochodowa}}\qquad
-\underbrace{E_{XY}=\frac{dQ_X}{dP_Y}\frac{P_Y}{Q_X}}_{\text{mieszana (krzyżowa)}}\qquad
-\underbrace{E_S=\frac{dQ_S}{dP}\frac{P}{Q_S}\ge 0}_{\text{cenowa podaży}}
-\]
-\begin{itemize}
-  \item $E_I>0$ — dobro normalne; $E_I<0$ — dobro niższego rzędu (inferior); $E_I>1$ — dobro luksusowe.
-  \item $E_{XY}>0$ — dobra substytucyjne; $E_{XY}<0$ — dobra komplementarne.
-  \item $E_S$ rośnie z \emph{horyzontem czasu} (dłuższy okres $\Rightarrow$ większa elastyczność) i z wolnymi mocami produkcyjnymi.
-\end{itemize}
-\end{definicja}
-
-\begin{uwaga}
-Determinanty $|E_D|$: dostępność substytutów (więcej $\Rightarrow$ bardziej elastyczny), udział wydatku w budżecie, charakter dobra (dobra pierwszej potrzeby — nieelastyczne; luksusowe — elastyczne) oraz \emph{czas} na dostosowanie.
-\end{uwaga}
+W analogiczny sposób definiuje się elastyczność podaży, opisującą reakcję wielkości produkcji na zmianę ceny. W krótkim okresie jest ona niska, gdyż mocy produkcyjnych nie da się szybko zwiększyć, a w długim okresie --- wyższa. Podobnie wyznacza się elastyczność dochodową (reakcja popytu na zmianę dochodu) oraz mieszaną (reakcja popytu na dobro na zmianę ceny innego dobra).
 
 % ---------------------------------------------------------------------
-\subsection{Optimum techniczne i ekonomiczne przedsiębiorstwa}
+\subsection{Optimum techniczne i ekonomiczne}
 % ---------------------------------------------------------------------
 
-Rozważamy krótki okres z jednym czynnikiem zmiennym (praca $L$). Podstawowe krzywe produkcji:
-\[
-TP=f(L),\qquad AP=\frac{TP}{L}\ \text{(produkt przeciętny)},\qquad MP=\frac{dTP}{dL}\ \text{(produkt krańcowy)}.
-\]
-Od pewnego poziomu $L$ działa \textbf{prawo malejących przychodów krańcowych}: kolejne jednostki pracy dokładają coraz mniej produkcji ($MP$ maleje).
+Rozważane jest przedsiębiorstwo w krótkim okresie, dysponujące jednym czynnikiem stałym (np. piecem piekarniczym) oraz jednym czynnikiem zmiennym (pracą). Produkcję opisują trzy wielkości:
+\begin{itemize}
+  \item produkt całkowity ($TP$) --- łączna wielkość produkcji całej załogi,
+  \item produkt przeciętny ($AP=TP/L$) --- produkcja przypadająca średnio na jednego pracownika,
+  \item produkt krańcowy ($MP=dTP/dL$) --- przyrost produkcji dzięki zatrudnieniu kolejnego pracownika,
+\end{itemize}
+gdzie $L$ oznacza liczbę pracowników. Zgodnie z prawem malejących przychodów krańcowych, od pewnego poziomu zatrudnienia każdy kolejny pracownik dokłada coraz mniejszy przyrost produkcji, ponieważ czynnik stały (piec) jest ograniczony. Ilustruje to tab.~\ref{tab:piekarnia}.
+
+\begin{table}[h]
+\centering
+\caption{Produkcja i wydajność pracy w~przykładowej piekarni (płaca 100 zł, cena bochenka 4 zł)}
+\label{tab:piekarnia}
+\footnotesize
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+Pracownik & \makecell{$MP$\\(dod. bochenki)} & \makecell{$TP$\\(razem)} & \makecell{$AP$\\(średnio)} & \makecell{wartość $MP$\\($MP\times 4$ zł)} \\
+\midrule
+1 & 40 & 40  & 40{,}0 & 160 zł \\
+2 & 50 & 90  & \textbf{45{,}0} & 200 zł \\
+3 & 30 & 120 & 40{,}0 & 120 zł \\
+4 & 15 & 135 & 33{,}8 & 60 zł  \\
+5 & 5  & 140 & 28{,}0 & 20 zł  \\
+\bottomrule
+\end{tabular}
+\zrodlo
+\end{table}
+
+Wyróżnia się dwa rodzaje optimum:
+\begin{itemize}
+  \item optimum techniczne --- poziom zatrudnienia, przy którym produkt przeciętny osiąga maksimum (w tab.~\ref{tab:piekarnia} przy dwóch pracownikach); jest to najwydajniejsze technicznie wykorzystanie czynnika zmiennego i zależy wyłącznie od technologii,
+  \item optimum ekonomiczne --- poziom zatrudnienia maksymalizujący zysk; zależy od cen. Przedsiębiorstwo zatrudnia kolejnych pracowników dopóty, dopóki wartość dodatkowej produkcji przewyższa płacę (w przykładzie do trzech pracowników: trzeci dokłada produkcję wartą 120 zł wobec 100 zł płacy, czwarty już tylko 60 zł).
+\end{itemize}
+
+Warunek optimum ekonomicznego można zapisać jako równość wartości produktu krańcowego i ceny czynnika:
+\begin{equation}
+MP\cdot P = w,
+\end{equation}
+gdzie $P$ oznacza cenę produktu, a $w$ --- płacę. Jest to równoważne produkcji na poziomie, przy którym koszt krańcowy zrównuje się z ceną. Zależności między krzywymi produktu przedstawia rys.~\ref{fig:tpapmp}.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
 \begin{groupplot}[
-  group style={group size=1 by 2, vertical sep=1.15cm},
-  width=11.5cm, height=4.3cm, xmin=0, xmax=8, domain=0:8, samples=120,
+  group style={group size=1 by 2, vertical sep=1.1cm},
+  width=12cm, height=4.2cm, xmin=0, xmax=8, domain=0:8, samples=120,
   axis lines=left, axis line style={-Stealth},
-  every axis plot/.append style={very thick, smooth},
+  every axis plot/.append style={thick},
   xtick=\empty, ytick=\empty]
-%
-\nextgroupplot[ylabel={$TP$}, ymin=0, ymax=34, xlabel={}]
-  \addplot[accent] {2*x^2 - 0.2*x^3};
-  \node[accent] at (axis cs:7.2,20) {$TP$};
-  \draw[dashed,gray] (axis cs:5,0) -- (axis cs:5,50);
-  \draw[dashed,gray] (axis cs:6.67,0) -- (axis cs:6.67,50);
-  \fill[accent] (axis cs:6.67,29.6) circle (2pt);
-  \node[accent,above] at (axis cs:6.67,29.6) {\scriptsize $TP_{\max}$};
-%
-\nextgroupplot[ylabel={$AP,\;MP$}, ymin=0, ymax=8,
-               xlabel={$L$ — nakład czynnika zmiennego}]
-  \addplot[accentB] {2*x - 0.2*x^2};      \node[accentB] at (axis cs:7.4,3.0) {$AP$};
-  \addplot[warn]    {4*x - 0.6*x^2};       \node[warn]    at (axis cs:2.2,6.55) {$MP$};
-  \draw[dashed,gray] (axis cs:5,0) -- (axis cs:5,8);
-  \draw[dashed,gray] (axis cs:6.67,0) -- (axis cs:6.67,8);
-  \fill[accent] (axis cs:5,5) circle (2pt);
-  \node[accent, font=\scriptsize, above left] at (axis cs:5,5) {$AP=MP$};
-  \node[accent, font=\scriptsize, align=center, anchor=south] at (axis cs:4.55,5.9) {optimum\\ techniczne};
-  \node[warn, font=\scriptsize, anchor=south] at (axis cs:6.67,6.2) {$MP=0$};
+\nextgroupplot[ylabel={$TP$}, ymin=0, ymax=34]
+  \addplot[black, smooth] {2*x^2 - 0.2*x^3};
+  \node at (axis cs:7,22) {$TP$};
+  \draw[dashed] (axis cs:5,0) -- (axis cs:5,50);
+  \fill (axis cs:6.67,29.6) circle (2pt);
+  \node[above, font=\scriptsize] at (axis cs:6.67,29.6) {maksimum produkcji};
+\nextgroupplot[ylabel={$AP,\;MP$}, ymin=0, ymax=8, xlabel={liczba pracowników $L$}]
+  \addplot[black, smooth] {2*x - 0.2*x^2};          \node at (axis cs:7.2,3.3) {$AP$};
+  \addplot[black, dashed, smooth] {4*x - 0.6*x^2};    \node at (axis cs:2.3,6.6) {$MP$};
+  \draw[dashed] (axis cs:5,0) -- (axis cs:5,8);
+  \fill (axis cs:5,5) circle (2pt);
+  \node[font=\scriptsize, align=center, anchor=south] at (axis cs:4.3,5.5) {optimum\\ techniczne};
 \end{groupplot}
 \end{tikzpicture}
-\caption{Krzywe produktu: całkowitego, przeciętnego i krańcowego. Optimum techniczne w~maksimum $AP$ (gdzie $AP=MP$).}
+\caption{Krzywe produktu całkowitego, przeciętnego i krańcowego}
 \label{fig:tpapmp}
+\zrodlo
 \end{figure}
 
-\begin{definicja}[title={Optimum techniczne vs ekonomiczne}]
+% ---------------------------------------------------------------------
+\subsection{Funkcja użyteczności}
+% ---------------------------------------------------------------------
+
+Użyteczność oznacza poziom zadowolenia (satysfakcji) z konsumpcji. Funkcja użyteczności porządkuje koszyki dóbr według preferencji konsumenta --- istotny jest ranking koszyków, nie zaś bezwzględna wartość zadowolenia, której nie da się zmierzyć. Zgodnie z prawem malejącej użyteczności krańcowej, każda kolejna jednostka dobra przynosi coraz mniejszy przyrost zadowolenia, co skłania konsumenta do różnicowania koszyka.
+
+Wybór konsumenta opisują dwa pojęcia:
 \begin{itemize}
-  \item \textbf{Optimum techniczne} — nakład, przy którym produkt przeciętny czynnika zmiennego jest \emph{największy} ($AP_{\max}$, gdzie $AP=MP$). To najbardziej \emph{wydajne technologicznie} wykorzystanie czynnika — zależy \emph{tylko} od technologii, nie od cen.
-  \item \textbf{Optimum ekonomiczne} — nakład/produkcja \emph{maksymalizująca zysk}. Warunek: wartość produktu krańcowego = cena czynnika,
-  \[
-  MP_L\cdot P = w \quad\Longleftrightarrow\quad P = MC,
-  \]
-  gdzie $w$ — płaca, $P$ — cena produktu. Zależy \emph{od cen}, nie tylko od technologii.
+  \item krzywa obojętności --- zbiór koszyków dających identyczny poziom zadowolenia,
+  \item linia budżetu --- zbiór koszyków dostępnych przy danym dochodzie i cenach.
 \end{itemize}
-\end{definicja}
 
-Racjonalny producent działa w \emph{II strefie} produkcji — między optimum technicznym ($AP_{\max}$) a maksimum produktu całkowitego ($MP=0$). Optimum ekonomiczne leży wewnątrz tej strefy, a jego dokładne położenie wyznacza relacja cen $w/P$.
-
-\begin{kluczowe}[title={Długi okres: reguła najniższego kosztu}]
-Gdy zmienne są dwa czynniki (praca $L$, kapitał $K$), producent minimalizuje koszt danej produkcji tam, gdzie \emph{izokwanta} jest styczna do \emph{izokosztu}:
-\[
-MRTS=\frac{MP_L}{MP_K}=\frac{w}{r}\qquad\Longleftrightarrow\qquad
-\frac{MP_L}{w}=\frac{MP_K}{r}.
-\]
-Czyli: ostatnia złotówka wydana na każdy czynnik daje ten sam przyrost produkcji.
-\end{kluczowe}
-
-% ---------------------------------------------------------------------
-\subsection{Funkcja użyteczności i optimum konsumenta}
-% ---------------------------------------------------------------------
-
-\textbf{Funkcja użyteczności} $U(x,y)$ przypisuje koszykom dóbr liczbę tak, by lepszym koszykom odpowiadały większe wartości. Użyteczność jest \emph{porządkowa} (ordynalna) — liczy się \emph{ranking} koszyków, nie bezwzględne wartości.
-
-\begin{definicja}[title={Użyteczność krańcowa i MRS}]
-\[
-MU_x=\frac{\partial U}{\partial x},\qquad
-MRS_{xy}=\frac{MU_x}{MU_y}=-\left.\frac{dy}{dx}\right|_{U=\text{const}}.
-\]
-$MU$ zwykle \emph{maleje} (prawo malejącej użyteczności krańcowej). $MRS$ to nachylenie \emph{krzywej obojętności} — ile $y$ konsument odda za jednostkę $x$ przy stałej użyteczności.
-\end{definicja}
-
-Przy ograniczeniu budżetowym $P_x x + P_y y = I$ (dochód $I$) problem konsumenta to maksymalizacja $U$ na linii budżetu. Rozwiązanie leży w punkcie \emph{styczności} krzywej obojętności i linii budżetu (rys.~\ref{fig:konsument}):
-
-\begin{kluczowe}[title={Warunek optimum konsumenta}]
-\[
-MRS_{xy}=\frac{MU_x}{MU_y}=\frac{P_x}{P_y}
-\qquad\Longleftrightarrow\qquad
-\boxed{\;\frac{MU_x}{P_x}=\frac{MU_y}{P_y}\;}
-\]
-(\emph{zasada wyrównywania użyteczności krańcowych na złotówkę}). Z mnożnikiem Lagrange'a $\mathcal L=U+\lambda(I-P_x x-P_y y)$ otrzymujemy $MU_i=\lambda P_i$, gdzie $\lambda$ to krańcowa użyteczność dochodu.
-\end{kluczowe}
-
-\begin{intuicja}
-To po prostu warunek KKT/Lagrange'a: budżet przesuwamy między dobra, dopóki „przyrost zadowolenia na 1~zł'' nie wyrówna się we wszystkich dobrach. Gdyby był różny, przeniesienie złotówki do dobra o wyższym $MU/P$ podniosłoby użyteczność.
-\end{intuicja}
+Konsument wybiera najlepszy koszyk dostępny w granicach budżetu; jest to punkt styczności krzywej obojętności z linią budżetu (rys.~\ref{fig:konsument}). Warunek optimum przyjmuje postać:
+\begin{equation}
+\frac{MU_x}{P_x}=\frac{MU_y}{P_y},
+\end{equation}
+gdzie $MU$ oznacza użyteczność krańcową dobra, a $P$ --- jego cenę. Oznacza to, że w optimum ostatnia jednostka pieniądza wydana na każde dobro przynosi ten sam przyrost zadowolenia; w przeciwnym razie przesunięcie wydatków w stronę dobra o wyższej użyteczności na jednostkę pieniądza podniosłoby łączne zadowolenie. Formalnie jest to zadanie maksymalizacji użyteczności przy ograniczeniu budżetowym, rozwiązywane metodą mnożników Lagrange'a.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1.0]
-  \draw[->] (0,0) -- (6.2,0) node[right]{\small $x$ (dobro X)};
-  \draw[->] (0,0) -- (0,6.2) node[above]{\small $y$ (dobro Y)};
-  % linia budzetu
-  \draw[very thick, accent] (0,5) -- (5,0);
-  \node[accent, left]  at (0,5) {\small $\tfrac{I}{P_y}$};
-  \node[accent, below] at (5,0) {\small $\tfrac{I}{P_x}$};
-  % krzywe obojetnosci U = x*y
-  \draw[very thick, accentB, domain=1.3:4.85, samples=100, smooth]
-        plot (\x,{6.25/\x}) node[right]{\small $U^\ast$};
-  \draw[accentB!55, domain=0.85:4.55, samples=100, smooth]
-        plot (\x,{4/\x}) node[right]{\small $U_1$};
-  % optimum
-  \fill[accent] (2.5,2.5) circle (2.2pt) node[above right]{\small $E$};
-  \draw[dashed, gray] (2.5,0) node[below]{\small $x^\ast$} -- (2.5,2.5) -- (0,2.5) node[left]{\small $y^\ast$};
-  \node[accent, align=center] at (4.4,4.2) {\scriptsize styczność:\\[-2pt]\scriptsize $MRS=P_x/P_y$};
+  \draw[->] (0,0) -- (6.2,0) node[right]{dobro X};
+  \draw[->] (0,0) -- (0,6.2) node[above]{dobro Y};
+  \draw[very thick] (0,5) -- (5,0);
+  \node[align=center, font=\small] at (4.15,4.15) {linia\\ budżetu};
+  \draw[very thick, domain=1.3:4.85, samples=100, smooth] plot (\x,{6.25/\x});
+  \node at (5.05,1.4) {$U_1$};
+  \draw[dashed, domain=0.9:4.5, samples=100, smooth] plot (\x,{4/\x});
+  \node at (4.4,0.72) {$U_0$};
+  \fill (2.5,2.5) circle (2.2pt) node[above right]{$E$};
+  \draw[dotted] (2.5,0) -- (2.5,2.5) -- (0,2.5);
 \end{tikzpicture}
-\caption{Optimum konsumenta: styczność krzywej obojętności i linii budżetu.}
+\caption{Optimum konsumenta jako punkt styczności krzywej obojętności ($U_1$) i linii budżetu}
 \label{fig:konsument}
+\zrodlo
 \end{figure}
 
 % ---------------------------------------------------------------------
 \subsection{Maksymalizacja zysku i podaż firmy w konkurencji doskonałej}
 % ---------------------------------------------------------------------
 
-\begin{definicja}[title={Konkurencja doskonała — założenia}]
-Wielu drobnych sprzedawców i nabywców; \emph{jednorodny} produkt; pełna informacja; swoboda wejścia i wyjścia; uczestnicy są \textbf{cenobiorcami} (price-takers). Firma sprzedaje po cenie rynkowej $P$, więc krzywa popytu na jej produkt jest \emph{pozioma}:
-\[
-P = AR = MR \quad(\text{cena} = \text{utarg przeciętny} = \text{utarg krańcowy}).
-\]
-\end{definicja}
+Konkurencja doskonała to model rynku o następujących cechach: wielu drobnych sprzedawców i nabywców, jednorodny produkt, pełna informacja oraz swoboda wejścia i wyjścia. Pojedyncze przedsiębiorstwo jest cenobiorcą (ang. \textit{price-taker}) --- nie ma wpływu na cenę i przyjmuje cenę rynkową jako daną, mogąc sprzedać dowolną ilość po tej samej cenie.
 
-Zysk to $\pi=TR-TC=P\,Q-TC(Q)$. Warunek maksymalizacji:
-\[
-\frac{d\pi}{dQ}=0\;\Rightarrow\; MR=MC \;\Rightarrow\; \boxed{\,P=MC(Q)\,},
-\qquad\text{przy rosnącym } MC\ \Big(\tfrac{dMC}{dQ}>0\Big).
-\]
+Zysk stanowi różnicę między przychodem a kosztami. Przedsiębiorstwo maksymalizuje zysk, wybierając wielkość produkcji, przy której koszt wytworzenia kolejnej jednostki zrównuje się z ceną:
+\begin{equation}
+MC = P,
+\end{equation}
+gdzie $MC$ oznacza koszt krańcowy. Dopóki koszt kolejnej jednostki jest niższy od ceny, jej wytworzenie zwiększa zysk; gdy przewyższa cenę, zysk maleje. Przykładowo, przy cenie 4 zł za bochenek opłaca się wytwarzać kolejne bochenki, których koszt jest niższy niż 4 zł, aż koszt kolejnej sztuki osiągnie poziom ceny.
 
-\paragraph{Krótki okres.} O tym, czy firma produkuje, decyduje pokrycie kosztów \emph{zmiennych}:
+Analiza krótkiego okresu wymaga rozróżnienia kosztów stałych (niezależnych od produkcji, np. czynsz) oraz zmiennych (rosnących wraz z produkcją, np. surowce). Przez $AVC$ oznacza się przeciętny koszt zmienny, a przez $ATC$ --- przeciętny koszt całkowity, oba w przeliczeniu na jednostkę. Decyzję o produkcji w krótkim okresie opisują trzy przypadki:
 \begin{itemize}
-  \item produkuj, jeśli $P\ge \min AVC$ — inaczej \textbf{punkt zamknięcia} (shutdown): lepiej $Q=0$ i strata równa kosztowi stałemu;
-  \item $P=\min ATC$ — \textbf{próg rentowności} (zysk zerowy);
-  \item $P>ATC$ — zysk dodatni; $\min AVC< P<\min ATC$ — strata, ale firma produkuje (pokrywa część kosztu stałego).
+  \item gdy cena nie pokrywa przeciętnego kosztu zmiennego ($P<AVC$), korzystniejsze jest czasowe wstrzymanie produkcji (punkt zamknięcia),
+  \item gdy cena pokrywa koszty zmienne, lecz nie całkowite ($AVC<P<ATC$), przedsiębiorstwo produkuje mimo straty, częściowo pokrywając koszty stałe,
+  \item gdy cena przewyższa przeciętny koszt całkowity ($P>ATC$), przedsiębiorstwo osiąga zysk.
 \end{itemize}
 
-\begin{kluczowe}[title={Krzywa podaży firmy (krótki okres)}]
-To \emph{rosnąca część krzywej $MC$ powyżej $\min AVC$}. Poniżej $\min AVC$ podaż wynosi $0$. Podaż rynkowa = pozioma suma podaży firm.
-\end{kluczowe}
+Krzywą podaży pojedynczego przedsiębiorstwa w krótkim okresie stanowi rosnąca część krzywej kosztu krańcowego powyżej punktu zamknięcia; wyższej cenie odpowiada większa opłacalna wielkość produkcji (rys.~\ref{fig:firma-ko}). Podaż rynkowa jest sumą podaży wszystkich przedsiębiorstw.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1.0]
-  \draw[->] (0,0) -- (8,0) node[right]{\small $Q$};
-  \draw[->] (0,0) -- (0,6.4) node[above]{\small koszt, cena};
-  % MC
-  \draw[very thick, accent, smooth] plot coordinates
+  \draw[->] (0,0) -- (8,0) node[right]{ilość $Q$};
+  \draw[->] (0,0) -- (0,6.4) node[above]{koszt, cena};
+  \fill[black!8] (0,3.0) rectangle (4.68,4.55);
+  \draw[very thick, smooth] plot coordinates
     {(0.5,4.6) (1,2.6) (1.8,1.4) (2.8,1.8) (3.6,2.8) (4.6,4.4) (5.3,6.0)};
-  \node[accent] at (5.35,6.2) {\small $MC$};
-  % AVC
-  \draw[thick, warn, smooth] plot coordinates
+  \node[right] at (5.3,6.0) {$MC$};
+  \draw[dashed, smooth] plot coordinates
     {(1,3.3) (1.8,2.2) (2.8,1.8) (3.8,2.15) (4.8,3.0) (5.4,3.8)};
-  \node[warn] at (5.6,3.8) {\small $AVC$};
-  % ATC
-  \draw[thick, accentB, smooth] plot coordinates
-    {(1.6,4.9) (2.4,3.6) (3.6,2.8) (4.4,3.05) (5.1,3.8) (5.5,4.3)};
-  \node[accentB] at (5.75,4.35) {\small $ATC$};
-  % cena
-  \draw[very thick, accent!60!black, dashed] (0,4.55) -- (7.4,4.55);
-  \node[accent!60!black, right] at (7.4,4.55) {\small $P=MR$};
-  % Q*
-  \fill[accent] (4.68,4.55) circle (2.2pt);
-  \draw[dotted] (4.68,0) node[below]{\small $Q^\ast$} -- (4.68,4.55);
-  % zysk (prostokat P .. ATC nad [0,Q*]) -- ATC(Q*)~3.0
-  \draw[dotted] (0,3.0) -- (4.68,3.0);
-  \fill[accent!12] (0,3.0) rectangle (4.68,4.55);
-  \node[accent] at (2.3,3.8) {\small zysk};
-  % punkty charakterystyczne
-  \fill[warn]  (2.8,1.8) circle (2pt);   \node[warn, below] at (2.55,1.65) {\scriptsize $\min AVC$};
-  \fill[accentB](3.6,2.8) circle (2pt);  \node[accentB, above left] at (3.55,2.9) {\scriptsize $\min ATC$};
+  \node[right] at (5.42,3.7) {$AVC$};
+  \draw[dash dot, smooth] plot coordinates
+    {(1.6,4.9) (2.4,3.6) (3.6,2.8) (4.4,3.05) (5.1,3.8) (5.6,4.4)};
+  \node[right] at (5.65,4.1) {$ATC$};
+  \draw[dotted, very thick] (0,4.55) -- (7.2,4.55);
+  \node[right] at (7.2,4.55) {cena};
+  \fill (4.68,4.55) circle (2.2pt);
+  \draw[dotted] (4.68,0) node[below]{$Q^{*}$} -- (4.68,4.55);
+  \node at (2.3,3.85) {zysk};
 \end{tikzpicture}
-\caption{Równowaga firmy w krótkim okresie: $P=MC$, zysk = pole $(P-ATC)\times Q^\ast$. Podaż = $MC$ powyżej $\min AVC$.}
+\caption{Równowaga przedsiębiorstwa w krótkim okresie: produkcja przy koszcie krańcowym równym cenie}
 \label{fig:firma-ko}
+\zrodlo
 \end{figure}
 
-\begin{table}[h]
-\centering
-\small
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{Relacja ceny} & \textbf{Sytuacja firmy (krótki okres)} \\
-\midrule
-$P>\min ATC$              & zysk ekonomiczny dodatni \\
-$P=\min ATC$              & próg rentowności, zysk zerowy \\
-$\min AVC<P<\min ATC$     & strata, ale produkuje \\
-$P=\min AVC$              & punkt zamknięcia \\
-$P<\min AVC$              & firma zamyka produkcję ($Q=0$) \\
-\bottomrule
-\end{tabular}
-\caption{Decyzja produkcyjna firmy w~krótkim okresie.}
-\end{table}
-
-\paragraph{Długi okres.} Wszystkie czynniki są zmienne (koszt $LRAC$), a swoboda \emph{wejścia i wyjścia} zeruje zysk ekonomiczny: dodatni zysk przyciąga nowe firmy (podaż rośnie, cena spada), strata wypycha firmy (podaż maleje, cena rośnie). W równowadze długookresowej:
-\[
-P = MR = MC = \min LRAC = \min ATC.
-\]
-
-\begin{kluczowe}[title={Równowaga długookresowa}]
-Firma produkuje w \emph{minimum} kosztu przeciętnego (efektywna skala), osiągając \textbf{zysk zerowy} (tzw. zysk normalny — koszt alternatywny kapitału jest już w kosztach). Dla gałęzi o stałych kosztach długookresowa krzywa podaży gałęzi jest \emph{pozioma} na poziomie $P=\min LRAC$.
-\end{kluczowe}
+W długim okresie wszystkie czynniki są zmienne, a swoboda wejścia i wyjścia sprowadza zysk ekonomiczny do zera. Dodatni zysk przyciąga nowe przedsiębiorstwa, co zwiększa podaż i obniża cenę, natomiast strata skłania część firm do wyjścia, co podaż zmniejsza, a cenę podnosi. W równowadze długookresowej cena zrównuje się z minimum przeciętnego kosztu, a przedsiębiorstwo osiąga jedynie zysk normalny (zerowy zysk ekonomiczny), produkując przy najniższym możliwym koszcie przeciętnym (rys.~\ref{fig:firma-do}).
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=0.95]
-  \draw[->] (0,0) -- (7,0) node[right]{\small $Q$};
-  \draw[->] (0,0) -- (0,5.6) node[above]{\small koszt, cena};
-  % LRAC U-shaped
-  \draw[very thick, accentB, smooth] plot coordinates
+\begin{tikzpicture}[scale=0.9]
+  \draw[->] (0,0) -- (7,0) node[right]{ilość $Q$};
+  \draw[->] (0,0) -- (0,5.6) node[above]{koszt, cena};
+  \draw[very thick, smooth] plot coordinates
     {(0.7,4.6) (1.6,3.2) (3.0,2.5) (4.4,3.2) (5.4,4.6)};
-  \node[accentB] at (5.6,4.7) {\small $LRAC$};
-  % LMC through min LRAC
-  \draw[thick, accent, smooth] plot coordinates
-    {(1.2,1.3) (2.2,1.9) (3.0,2.5) (3.8,3.6) (4.6,5.1)};
-  \node[accent] at (4.75,5.15) {\small $LMC$};
-  % cena styczna do min
-  \draw[very thick, accent!60!black, dashed] (0,2.5) -- (6.4,2.5);
-  \node[accent!60!black, right] at (6.4,2.5) {\small $P=\min LRAC$};
-  \fill[accent] (3.0,2.5) circle (2.2pt);
-  \draw[dotted] (3.0,0) node[below]{\small $Q_{LR}$} -- (3.0,2.5);
-  \node[accent, align=center] at (1.7,1.6) {\scriptsize zysk\\[-2pt]\scriptsize zerowy};
+  \node[right] at (5.4,4.75) {koszt przeciętny};
+  \draw[dashed, very thick] (0,2.5) -- (6.0,2.5);
+  \node[right] at (6.0,2.5) {cena};
+  \fill (3.0,2.5) circle (2.2pt);
+  \draw[dotted] (3.0,0) -- (3.0,2.5);
 \end{tikzpicture}
-\caption{Równowaga długookresowa: cena styczna do minimum $LRAC$; zysk ekonomiczny = 0.}
+\caption{Równowaga długookresowa: cena równa minimum przeciętnego kosztu, zysk ekonomiczny równy zeru}
 \label{fig:firma-do}
+\zrodlo
 \end{figure}
