@@ -1,0 +1,15 @@
+# Narzedzia lokalne (silnik LaTeX Tectonic - nie commitujemy binarki ~47 MB)
+.tools/
+
+# Pliki pomocnicze LaTeX
+*.aux
+*.log
+*.toc
+*.out
+*.xdv
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Cache Pythona
+__pycache__/

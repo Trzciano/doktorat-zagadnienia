@@ -1,0 +1,87 @@
+% !TeX program = pdflatex
+% Kompilacja:  pdflatex main.tex  (dwukrotnie, aby zbudować spis treści)
+\documentclass[11pt,a4paper]{report}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\else
+  % XeTeX/LuaTeX (np. Tectonic): natywny Unicode + czcionka z polskimi znakami.
+  % Latin Modern ladowany po nazwie pliku OTF (dostepny w bundlu Tectonica).
+  \usepackage{fontspec}
+  \setmainfont{lmroman10-regular.otf}[
+    BoldFont       = lmroman10-bold.otf,
+    ItalicFont     = lmroman10-italic.otf,
+    BoldItalicFont = lmroman10-bolditalic.otf ]
+\fi
+\usepackage[polish]{babel}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+% Spis treści = lista zagadnień (tylko rozdziały i sekcje)
+\setcounter{tocdepth}{1}
+% Numeracja sekcji ciągła w obrębie rozdziału
+
+\title{Zagadnienia egzaminacyjne \\ \large Doktorat}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% =====================================================================
+\chapter{Ekonomia}
+% =====================================================================
+
+\section{Elastyczność popytu i podaży; optimum techniczne i ekonomiczne; funkcja użyteczności; maksymalizacja zysku i krzywa podaży przedsiębiorstwa na rynku doskonale konkurencyjnym w krótkim i długim okresie}
+
+\section{Polityka regulacji cen; wpływ opodatkowania na sytuację rynkową; dobra publiczne i dobra prywatne}
+
+\section{Niedoskonałości rynku; asymetria informacyjna -- konsekwencje i metody redukcji}
+
+\section{Formy konkurencji rynkowej -- konkurencja doskonała i konkurencja monopolistyczna, cechy rynku oligopolistycznego}
+
+\section{Determinanty i konsekwencje nierówności dochodowych, krzywa Lorenza i współczynnik Giniego}
+
+\section{Definicja i metody pomiaru PKB; PKB a PNB; ograniczenia PKB jako miernika dobrobytu; inflacja -- pomiar i przyczyny występowania; inflacja a deflator PKB; determinanty wzrostu gospodarczego w długim okresie; konwergencja; modele wzrostu gospodarczego}
+
+\section{Bezrobocie -- definicja, rodzaje; pojęcie, rodzaje i funkcje pieniądza; mechanizm kreacji pieniądza}
+
+\section{Międzynarodowe przepływy dóbr i kapitału oraz ich determinanty; zalety i wady teorii parytetu siły nabywczej i parytetu stóp procentowych; bilans handlowy z zagranicą; efekt mnożnikowy i efekt wypychania w keynesowskim modelu gospodarki; globalne łańcuchy wartości}
+
+\section{Przyczyny, przebieg i skutki kryzysów gospodarczych; krzywa zagregowanego popytu oraz długo- i krótkookresowa krzywa zagregowanej podaży; krótko- i długookresowa krzywa Phillipsa; formy stabilizacyjnej polityki państwa}
+
+\section{Modele przepływów międzygałęziowych; mnożniki input-output; globalne modele IO -- metoda konstrukcji, zalety, ograniczenia, zastosowania}
+
+% =====================================================================
+\chapter{Finanse}
+% =====================================================================
+
+\section{Rozwój światowych finansów i wycena aktywów w świetle historycznie postrzeganego ryzyka i niepewności; model równowagi ogólnej (Arrow (1951), Debreu (1951), Arrow, Debreu (1954))}
+
+\section{Model Markowitza (1952) jako podwaliny teorii CAPM (1960--1962) i ICAPM Mertona (1973) -- krytyka, a warunki zgodności wyceny CAPM, ICAPM}
+
+\section{ICAPM w świetle APT -- różnice i podobieństwa; alternatywne modele wyceny}
+
+\section{Szacowanie ryzyka inwestycji w walory notowane na rynku giełdowym}
+
+\section{Fundusze inwestycyjne -- ryzyko inwestycji w wybrane rodzaje funduszy}
+
+\section{Możliwości zabezpieczenia działalności firmy w warunkach zmieniających się przyszłych stanów ekonomii}
+
+\section{Ocena wyników sprawozdań finansowych spółek publicznych w świetle inwestora giełdowego}
+
+\section{Wycena kapitałowa nieruchomości, przedsiębiorstwa -- metody i warunki dyskretyzacji}
+
+\section{Rynkowa wartość obligacji, stopy zwrotu z inwestycji w obligacje w zależności od zmian rynkowych stóp procentowych}
+
+\section{Zabezpieczenia wartości portfela obligacji -- duration obligacji, ryzyko okresu posiadania, ryzyko reinwestycji}
+
+\end{document}
